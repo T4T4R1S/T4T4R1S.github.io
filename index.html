@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker's Blog</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: "Courier New", Courier, monospace;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #292929;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: fixed;
+            height: 100vh;
+        }
+        .sidebar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .sidebar h2 {
+            color: #a8d5e2;
+        }
+        .sidebar a {
+            display: block;
+            color: #ff9f68;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+        .sidebar a:hover {
+            color: #a8d5e2;
+        }
+        .content {
+            margin-left: 280px;
+            padding: 20px;
+            width: 100%;
+        }
+        .navbar {
+            display: flex;
+            gap: 20px;
+            background-color: #2c2c2c;
+            padding: 10px;
+            border-radius: 8px;
+            justify-content: center;
+        }
+        .navbar a {
+            color: #a8d5e2;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            color: #ff9f68;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="./photos/photo_2024-12-21_11-08-37.jpg" alt="Profile Picture">
+        <h2>Mustafa Altayeb</h2>
+        <a href="https://github.com/T4T4R1S" target="_blank">GitHub</a>
+        <a href="https://x.com/T4T4R1S" target="_blank">Twitter</a>
+        <a href="mustafaaltayeb305@gmail.com">Email</a>
+    </div>
+    
+    <div class="content">
+        <div class="navbar">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('about')">About Me</a>
+            <a href="#" onclick="showPage('projects')">Projects</a>
+            <a href="#" onclick="showPage('blog')">Blog Posts</a>
+            <a href="#" onclick="showPage('resources')">Resources</a>
+            <a href="#" onclick="showPage('challenges')">Challenges</a>
+            <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+        
+        <div id="home" class="page active">
+            <h1>T4T4R1S's Blog</h1>
+        </div>
+        
+        <div id="about" class="page">
+            <h1>About Me</h1>
+            <p>"I am Mostafa Altayeb, a Computer Science student at Sinai University specializing in Offensive Security. Passionate about penetration testing and cybersecurity, I continuously enhance my skills while sharing my knowledge to contribute to the community."</p>
+        </div>
+        
+        <div id="projects" class="page">
+            <h1>Projects</h1>
+            <ul>
+                <li><a href="#">Web Exploitation Toolkit</a></li>
+                <li><a href="#">Buffer Overflow Practice</a></li>
+            </ul>
+        </div>
+        
+        <div id="blog" class="page">
+            <h1>Blog Posts</h1>
+            <p>Technical write-ups and research articles.</p>
+        </div>
+        
+        <div id="resources" class="page">
+            <h1>Resources</h1>
+            <ul>
+                <li>"The Web Application Hacker's Handbook"</li>
+                <li><a href="https://www.kali.org/">Kali Linux</a></li>
+            </ul>
+        </div>
+        
+        <div id="challenges" class="page">
+            <h1>Challenges & Open Projects</h1>
+        </div>
+        
+        <div id="contact" class="page">
+            <h1>Contact</h1>
+            <p>Email: mustafaaltayeb305@gmail.com</p>
+        </div>
+    </div>
+    
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
